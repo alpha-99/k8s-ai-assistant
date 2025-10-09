@@ -1,8 +1,9 @@
 package tools
 
 import (
-	"k8s-assistant/cmd/utils"
 	"strings"
+
+	"github.com/k8s-chatgpt/cmd/utils"
 )
 
 type DeleteToolParam struct {

@@ -3,8 +3,9 @@ package controllers
 import (
 	"context"
 	"io"
-	"k8s-assistant/pkg/service"
 	"net/http"
+
+	"github.com/assistant-server/pkg/service"
 
 	"github.com/gin-gonic/gin"
 )

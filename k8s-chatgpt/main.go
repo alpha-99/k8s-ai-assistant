@@ -22,7 +22,7 @@ THE SOFTWARE.
 package main
 
 import (
-	"k8s-assistant/cmd"
+	"github.com/k8s-chatgpt/cmd"
 )
 
 func main() {

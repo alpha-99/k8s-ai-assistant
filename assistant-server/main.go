@@ -22,9 +22,10 @@ THE SOFTWARE.
 package main
 
 import (
-	"k8s-assistant/pkg/config"
-	"k8s-assistant/pkg/controllers"
-	"k8s-assistant/pkg/service"
+	"github.com/assistant-server/pkg/controllers"
+	"github.com/assistant-server/pkg/service"
+
+	"github.com/assistant-server/pkg/config"
 
 	"github.com/gin-gonic/gin"
 )

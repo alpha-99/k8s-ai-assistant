@@ -2,7 +2,8 @@ package controllers
 
 import (
 	"fmt"
-	"k8s-assistant/pkg/service"
+
+	"github.com/assistant-server/pkg/service"
 
 	"github.com/gin-gonic/gin"
 )

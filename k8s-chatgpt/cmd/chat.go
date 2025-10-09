@@ -7,10 +7,11 @@ import (
 	"bufio"
 	"encoding/json"
 	"fmt"
-	"k8s-assistant/cmd/ai"
-	"k8s-assistant/cmd/promptTpl"
-	"k8s-assistant/cmd/tools"
 	"regexp"
+
+	"github.com/k8s-chatgpt/cmd/ai"
+	"github.com/k8s-chatgpt/cmd/promptTpl"
+	"github.com/k8s-chatgpt/cmd/tools"
 
 	"github.com/spf13/cobra"
 )

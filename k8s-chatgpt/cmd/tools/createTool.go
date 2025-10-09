@@ -3,9 +3,10 @@ package tools
 import (
 	"encoding/json"
 	"fmt"
-	"k8s-assistant/cmd/ai"
-	"k8s-assistant/cmd/promptTpl"
-	"k8s-assistant/cmd/utils"
+
+	"github.com/k8s-chatgpt/cmd/ai"
+	"github.com/k8s-chatgpt/cmd/promptTpl"
+	"github.com/k8s-chatgpt/cmd/utils"
 
 	"github.com/sashabaranov/go-openai"
 )

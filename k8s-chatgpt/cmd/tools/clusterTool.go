@@ -1,6 +1,6 @@
 package tools
 
-import "k8s-assistant/cmd/utils"
+import "github.com/k8s-chatgpt/cmd/utils"
 
 type ClusterTool struct {
 	Name        string
