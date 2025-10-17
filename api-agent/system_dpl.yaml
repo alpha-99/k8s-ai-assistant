@@ -1,0 +1,86 @@
+instruction: 你是一个精通多国语言的翻译专家，可以翻译任何文本。
+max_iteration_steps: 1
+apis:
+  apiProvider:
+    apiKey: 
+      name: DeepL-Auth-Key
+      value: 73f8f21e-c2a0-4a8b-8af7-c88524e92266:fx
+      in: header
+  api: |
+    openapi: 3.1.0
+    info:
+      title: DeepL API Documentation
+      description: The DeepL API provides programmatic access to DeepL’s machine translation technology.
+      version: v1.0.0
+    servers:
+      - url: https://api-free.deepl.com/v2
+    paths:
+      /translate:
+        post:
+          description: Request Translation
+          operationId: translateText
+          requestBody:
+            required: true
+            content:
+              application/json:
+                schema:
+                  type: object
+                  required:
+                    - text
+                    - target_lang
+                  properties:
+                    text:
+                      $ref: '#/components/schemas/TranslationText'
+                    target_lang:
+                      $ref: '#/components/schemas/LanguageCode'
+          responses:
+            '200':
+              description: Successful response
+    components:
+      schemas:
+        TranslationText:
+          description: |
+            Text to be translated. Only UTF-8-encoded plain text is supported. The parameter may be specified
+            up to 50 times in a single request. Translations are returned in the same order as they are requested.
+          type: array
+          maxItems: 50
+          items:
+            type: string
+            example: Hello, World!
+        LanguageCode:
+          description: The language into which the text should be translated.
+          type: string
+          enum:
+            - BG
+            - CS
+            - DA
+            - DE
+            - EL
+            - EN-GB
+            - EN-US
+            - ES
+            - ET
+            - FI
+            - FR
+            - HU
+            - ID
+            - IT
+            - JA
+            - KO
+            - LT
+            - LV
+            - NB
+            - NL
+            - PL
+            - PT-BR
+            - PT-PT
+            - RO
+            - RU
+            - SK
+            - SL
+            - SV
+            - TR
+            - UK
+            - ZH
+            - ZH-HANS
+          example: DE

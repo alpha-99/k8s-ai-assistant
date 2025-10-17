@@ -1,0 +1,58 @@
+instruction: 你是一个精通世界地理信息的专家，可以回答有关地理位置相关信息。
+max_iteration_steps: 5
+apis:
+  apiProvider:
+    domain: restapi.amap.com
+    serviceName: geo
+    servicePort: 80
+    apiKey: 
+      name: key
+      value: 0f1250324706366cfca27fe3af46ce0103
+      in: query
+  api: |
+    openapi: 3.1.0
+    info:
+      title: 高德地图
+      description: 获取 POI 的相关信息
+      version: v1.0.0
+    servers:
+      - url: https://restapi.amap.com
+    paths:
+      /v5/place/text:
+        get:
+          description: 根据POI名称，获得POI的经纬度坐标
+          operationId: get_location_coordinate
+          parameters:
+            - name: keywords
+              in: query
+              description: POI名称，必须是中文
+              required: true
+              schema:
+                type: string
+            - name: region
+              in: query
+              description: POI所在的区域名，必须是中文
+              required: true
+              schema:
+                type: string
+          deprecated: false
+      /v5/place/around:
+        get:
+          description: 搜索给定坐标附近的POI
+          operationId: search_nearby_pois
+          parameters:
+            - name: keywords
+              in: query
+              description: 目标POI的关键字
+              required: true
+              schema:
+                type: string
+            - name: location
+              in: query
+              description: 中心点的经度和纬度，用逗号隔开
+              required: true
+              schema:
+                type: string
+          deprecated: false
+    components:
+      schemas: {}
